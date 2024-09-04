@@ -18,3 +18,7 @@ services:
       - ./frontend/public:/app/public
     ports:
       - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_URL_API="http://3.133.116.145"
+
+
