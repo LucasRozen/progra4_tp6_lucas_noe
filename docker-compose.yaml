@@ -5,7 +5,7 @@ services:
     build:
       context: ./backend
     volumes:
-      - ./backend/database.db:/app/database.db
+      - ./backend/src/database.db:/app/database.db
     ports:
       - "3001:3001"
 
