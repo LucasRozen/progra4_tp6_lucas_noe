@@ -19,6 +19,6 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NEXT_PUBLIC_URL_API="http://3.133.116.145"
+      - NEXT_PUBLIC_URL_API=http://18.118.23.134:3001
 
 
