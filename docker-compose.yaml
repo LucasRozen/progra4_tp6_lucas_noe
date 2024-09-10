@@ -1,13 +1,15 @@
 services:
   backend:
+    restart: unless-stopped
     build:
-      context: ./backend
+      context: ./backend  
     volumes:
       - ./backend/src/database.db:/app/database.db
     ports:
       - "3001:3001"
 
   frontend:
+    restart: unless-stopped
     build:
       context: ./frontend
     depends_on:
