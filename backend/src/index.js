@@ -7,10 +7,13 @@ const express_1 = __importDefault(require("express"));
 const routes_1 = __importDefault(require("./routes")); // Importa las rutas definidas en otro archivo
 const dotenv_1 = __importDefault(require("dotenv")); // Importa dotenv para cargar variables de entorno desde .env
 const path_1 = __importDefault(require("path")); // Importa la biblioteca path para manejar rutas de archivos
+const cors_1 = __importDefault(require("cors")); // Importa el paquete CORS
+
 dotenv_1.default.config(); // Carga las variables de entorno desde .env
 const app = (0, express_1.default)(); // Crea una instancia de la aplicación Express
 const PORT = process.env.PORT || 3000; // Obtiene el puerto del entorno o utiliza 3000 por defecto
 app.use(express_1.default.json()); // Permite el análisis de solicitudes JSON
+app.use((0, cors_1.default)()); // Configura CORS para permitir todas las solicitudes
 // Servir los archivos estáticos de Monaco Editor desde la ruta '/monaco'
 app.use('/monaco', express_1.default.static(path_1.default.join(__dirname, '../node_modules/monaco-editor')));
 app.use('/api', routes_1.default); // Monta las rutas en el prefijo '/api'
