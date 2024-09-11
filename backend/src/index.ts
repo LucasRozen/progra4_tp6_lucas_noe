@@ -9,10 +9,7 @@ dotenv.config(); // Carga las variables de entorno desde .env
 const app: Express = express(); // Crea una instancia de la aplicación Express
 const PORT = process.env.PORT || 3000; // Obtiene el puerto del entorno o utiliza 3000 por defecto
 
-app.use(cors({
-  origin: '*',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-})); // Permite CORS en todas las rutas
+app.use(cors()); // Permite CORS en todas las rutas
 app.use(express.json()); // Permite el análisis de solicitudes JSON
 
 // Servir los archivos estáticos de Monaco Editor desde la ruta '/monaco'
