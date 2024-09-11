@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3001
 
 # Comando para ejecutar la aplicación
-CMD ["node", "src/index.ts"]
+CMD ["node", "src/index.js"]
